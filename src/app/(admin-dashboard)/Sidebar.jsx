@@ -12,6 +12,7 @@ export default function Sidebar({ children, isSidebarOpen }) {
       <aside className="h-screen">
         <nav className="h-full flex flex-col bg-primaryBackground border-r shadow-sm transition-all duration-300">
           <div className="p-4 pb-2 flex justify-between items-center">
+            <Link href={'/admin-dashboard'}>
             <Image
               width={150}
               height={150}
@@ -21,6 +22,7 @@ export default function Sidebar({ children, isSidebarOpen }) {
                 isSidebarOpen ? "w-32" : "w-0"
               }`}
             />
+            </Link>
           </div>
 
           <SidebarContext.Provider value={{ isSidebarOpen }}>

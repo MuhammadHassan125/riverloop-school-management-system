@@ -32,7 +32,7 @@ const SidebarWrapper = ({isSidebarOpen}) => {
             <SidebarItem
               icon={<Layers size={20} />}
               text="Payment Gateway"
-              link="/payment-gateway"
+              link="#"
             />
             <SidebarItem icon={<Flag size={20} />} text="Users" link="/user" />
             <hr className="my-3" />
