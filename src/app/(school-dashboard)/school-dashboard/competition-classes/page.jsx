@@ -103,7 +103,7 @@ const columns = [
     boxShadow: 24,
     p: 4,
   };
-const page = () => {
+const Page = () => {
     const [open, setOpen] = React.useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
@@ -222,4 +222,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page

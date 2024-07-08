@@ -40,7 +40,7 @@ const featuresData = [
     desc: "In most states, the legal limit in blood alcohol to not be considered DUI is 500 to 1,000 mg/L. Ther",
   },
 ];
-const page = () => {
+const Page = () => {
   const [activeTab, setActiveTab] = useState("personal");
 
   const handleTabClick = (tabName) => {
@@ -317,4 +317,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

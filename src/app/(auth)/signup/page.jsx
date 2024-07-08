@@ -20,6 +20,7 @@ const page = () => {
               <h2 className="text-xl font-semibold">Welcome</h2>
               <Image
               src={"/images/hand.JPG"}
+              alt="signup-img"
               width={30}
               height={30}
               />

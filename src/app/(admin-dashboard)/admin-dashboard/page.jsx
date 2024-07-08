@@ -86,7 +86,7 @@ const TopCardsSection = () => {
                 <div className="absolute flex justify-center items-center top-0 left-3 p-3 rounded-xl -translate-y-[50%]"
                 style={{backgroundColor:card.bgColor}}
                 >
-                  <Image src={card.img} width={20} height={20} />
+                  <Image src={card.img} alt="card-img" width={20} height={20} />
                 </div>
 
                 <div className="flex flex-col text-right items-end">
@@ -115,6 +115,7 @@ const TopCardsSection = () => {
                 <React.Fragment key={index.title}>
                    <div className="w-[100%] md:w-[24%] p-3 border-borderGray rounded-xl border-[1px]">
                         <Image
+                          alt="img"
                           src={index.icon}
                           width={35}
                           height={35}

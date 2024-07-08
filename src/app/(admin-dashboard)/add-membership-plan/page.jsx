@@ -5,8 +5,9 @@ import { FaArrowLeft } from "react-icons/fa";
 import PrimaryBtn from "@/components/dashboard/PrimaryBtn";
 import { IoMdCheckmark } from "react-icons/io";
 
-const page = () => {
+const Page = () => {
   const [activeTab, setActiveTab] = useState("general");
+  
 
   const handleTabClick = (tabName) => {
     setActiveTab(tabName);
@@ -169,4 +170,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

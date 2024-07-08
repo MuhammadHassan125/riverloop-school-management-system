@@ -97,6 +97,7 @@ const page = () => {
                     <div key={index} className="w-[100%] md:w-[23%] rounded-md flex flex-col gap-1">
                         <Image
                         src={course.img}
+                        alt="img"
                         width={600}
                         height={600}
                         />

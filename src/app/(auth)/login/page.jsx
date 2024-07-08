@@ -18,6 +18,7 @@ const page = () => {
             <div className="flex items-center w-20 mx-auto ">
               <h2 className="text-xl font-semibold">Hello</h2>
               <Image
+              alt="login-img"
               src={"/images/hand.JPG"}
               width={30}
               height={30}

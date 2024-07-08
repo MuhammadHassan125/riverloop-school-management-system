@@ -136,6 +136,7 @@ const TopCardsSection = () => {
                    <div className=" w-[100%] md:w-[50%] p-3 border-borderGray rounded-xl border-[1px]">
                         <Image
                           src={index.icon}
+                          alt="img"
                           width={35}
                           height={35}
                         />
@@ -160,11 +161,13 @@ const TopCardsSection = () => {
                     <div className="flex gap-1">
                       <Image
                         src={'/images/Avatar.png'}
+                        alt="img"
                         width={20}
                         height={8}
                         />
                       <Image
                         src={'/images/Avatar2.png'}
+                        alt="img"
                         width={20}
                         height={8}
                         />

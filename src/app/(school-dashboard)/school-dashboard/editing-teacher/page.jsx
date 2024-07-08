@@ -174,7 +174,7 @@ const columns = [
         ),
       },
   ];
-const page = () => {
+const Page = () => {
   const [activeTab, setActiveTab] = useState("personal");
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
@@ -526,4 +526,4 @@ slotProps={{
   );
 };
 
-export default page;
+export default Page;

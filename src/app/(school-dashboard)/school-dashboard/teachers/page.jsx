@@ -110,7 +110,7 @@ const style = {
   p: 4,
 };
 
-const page = () => {
+const Page = () => {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -181,11 +181,12 @@ const page = () => {
               <div className='w-full flex flex-col items-center justify-center text-center gap-4'>
                 <Image
                 src={'/images/email.png'}
+                alt='img'
                 width={220}
                 height={220}
                 />
                 <h3>Send Invite</h3>
-                <p className='text-primaryText text-[14px]'>Enter your professor's email address in the field provided on our registration page. Once submitted, an email invitation will be sent to teacher email</p>
+                <p className='text-primaryText text-[14px]'>Enter your professors email address in the field provided on our registration page. Once submitted, an email invitation will be sent to teacher email</p>
                 <h6 className='text-primaryText text-[14px]'>teacher@example.com</h6>
 
                 <PrimaryBtn
@@ -204,4 +205,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page
