@@ -53,7 +53,7 @@ const MobileMenu = () => {
                     className="text-3xl absolute right-0 top-0 m-4"
                     onClick={toggleDrawer(false)}
                   />
-                  <Sidebar>
+                  <Sidebar className="text-black">
                     <SidebarItem
                       icon={<LayoutDashboard size={20} />}
                       text="Dashboard"

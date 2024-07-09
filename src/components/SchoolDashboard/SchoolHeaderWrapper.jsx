@@ -1,5 +1,5 @@
 import React from "react";
-import Header from "@/app/(admin-dashboard)/Header";
+import Header from "@/app/(school-dashboard)/Header";
 const SchoolHeaderWrapper = ({handleSideBarToggle}) => {
   return (
     <>

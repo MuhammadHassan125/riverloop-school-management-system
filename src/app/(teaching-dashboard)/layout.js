@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import TeachingSidebarWrapper from "@/components/TeachingPanel/TeachingSidebarWrapper";
-import HeaderWrapper from "@/components/AdminPanel/HeaderWrapper";
+import HeaderWrapper from "@/components/TeachingPanel/TeachingHeaderWrapper";
 import MobileMenu from "@/components/AdminPanel/MobileMenu";
 
 const Layout = ({ children }) => {

@@ -1,3 +1,4 @@
+'use client';
 import Sidebar, { SidebarItem } from '@/app/(admin-dashboard)/Sidebar'
 import React from 'react'
 import {
@@ -8,20 +9,29 @@ import {
     Calendar,
     Settings,
   } from "lucide-react";
-const SidebarWrapper = ({isSidebarOpen}) => {
-  return (
+import { usePathname } from 'next/navigation';
+  const SidebarWrapper = ({isSidebarOpen}) => {
+
+const pathname = usePathname();
+const isActive = (path) => {
+   return pathname.pathname === path;
+    //  console.log(path);
+  }
+
+      return (
     <>
     <Sidebar isSidebarOpen={isSidebarOpen}>
             <SidebarItem
               icon={<LayoutDashboard size={20} />}
               text="Dashboard"
-              active
+              active={isActive("/admin-dashboard")}
               link="/admin-dashboard"
             />
             <SidebarItem
               icon={<StickyNote size={20} />}
               text="Subscription"
-              alert
+              active={isActive("/subscription")}
+              alert="10"
               link="/subscription"
             />
             <SidebarItem

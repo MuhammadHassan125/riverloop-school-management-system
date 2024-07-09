@@ -150,3 +150,16 @@ h4{
   scrollbar-width: auto;
   scrollbar-color: #A5ACB8 ;
 }
+
+
+.dropdown-content {
+  z-index: 10; 
+}
+
+.dropdown-content.hidden {
+  display: none;
+}
+
+.dropdown-content.visible {
+  display: block;
+}

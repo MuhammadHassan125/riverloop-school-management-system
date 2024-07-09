@@ -23,7 +23,7 @@ const Layout = ({ children }) => {
           <div className="w-full h-auto py-2">
             {/* header  */}
             <HeaderWrapper handleSideBarToggle={handleSideBarToggle} />
-            <MobileMenu/>
+            <MobileMenu className="text-black"/>
             
           </div>
 

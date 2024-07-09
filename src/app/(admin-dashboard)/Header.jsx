@@ -1,33 +1,66 @@
-import React from 'react';import { IoMdNotificationsOutline } from "react-icons/io";
+import React from 'react'; import { IoMdNotificationsOutline } from "react-icons/io";
 import { IoSettingsOutline } from "react-icons/io5";
 import { RiSearchLine } from "react-icons/ri";
 import Avatar from '@mui/material/Avatar';
 import Badge from '@mui/material/Badge';
-import { RiMenu3Fill, RiMenu2Line  } from "react-icons/ri";
+import { RiMenu3Fill, RiMenu2Line } from "react-icons/ri";
 import Link from 'next/link';
+import { IoIosArrowDown } from "react-icons/io";
+import Box from '@mui/material/Box';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select, { SelectChangeEvent } from '@mui/material/Select';
+
 
 const Header = ({ handleSideBarToggle, isSidebarOpen }) => {
+  const [age, setAge] = React.useState('');
+
+  const handleChange = (event) => {
+    setAge(event.target.value);
+  };
+
   return (
     <React.Fragment>
       <main className='flex flex-row w-[100%] h-full justify-between items-center'>
         {/* left side of header  */}
         <div className='flex items-center w-[40%] justify-between px-3'>
           <button
-              onClick={handleSideBarToggle}
-              className=" text-2xl rounded-lg bg-gray-50 hover:bg-gray-100 transition-all duration-300"
-            >
-              {isSidebarOpen ? <RiMenu3Fill /> : <RiMenu2Line /> }
-            </button>
+            onClick={handleSideBarToggle}
+            className=" text-2xl rounded-lg bg-gray-50 hover:bg-gray-100 transition-all duration-300"
+          >
+            {isSidebarOpen ? <RiMenu3Fill /> : <RiMenu2Line />}
+          </button>
 
           {/* search bar  */}
-          <div className='w-[80%] flex justify-between items-center px-2 border-[2px] rounded-full py-[6px] border-[#EDEDEE] bg-transparent '>
+          <div className='w-[80%] flex justify-between items-center px-2 border-[2px] rounded-full py-[6px] border-[#EDEDEE] bg-transparent'>
             <RiSearchLine className='text-xl mr-2 text-primaryText' />
             <input
-              className='outline-none w-full text-[#EDEDEE] bg-transparent'
+              className='outline-none w-full text-primaryText bg-transparent'
               type='text'
               placeholder='Search...'
             />
+              <Select
+          labelId="demo-simple-select-label"
+          id="demo-simple-select"
+          value={age}
+          label="Age"
+          onChange={handleChange}
+          sx={{
+            '& .MuiOutlinedInput-notchedOutline': {
+              border: 'none',
+            },
+            height: '2px',
+            color: 'gray',
+          }}
+        >
+          <MenuItem value={10}>admin</MenuItem>
+          <MenuItem value={20}>categories</MenuItem>
+          <MenuItem value={30}>lorem</MenuItem>
+        </Select>
           </div>
+
+
         </div>
 
         {/* right side of header  */}
@@ -42,18 +75,18 @@ const Header = ({ handleSideBarToggle, isSidebarOpen }) => {
           </div>
 
           <div className='flex items-center border rounded-full p-2 mx-3'>
-            <Link href="/school-dashboard/notifications">
-            <Badge
-              badgeContent={12}
-              sx={{
-                '& .MuiBadge-badge': {
-                  backgroundColor: 'red',
-                  color: 'white',
-                },
-              }}
-            >
-              <IoMdNotificationsOutline className='text-2xl' />
-            </Badge>
+            <Link href="/notifications">
+              <Badge
+                badgeContent={12}
+                sx={{
+                  '& .MuiBadge-badge': {
+                    backgroundColor: 'red',
+                    color: 'white',
+                  },
+                }}
+              >
+                <IoMdNotificationsOutline className='text-2xl' />
+              </Badge>
             </Link>
           </div>
 

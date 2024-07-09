@@ -50,7 +50,7 @@ const page = () => {
     <React.Fragment>
         <Breadcrumb items={breadcrumb}/>
         <main className="w-[98%] h-[100vh] p-3 m-auto border-[1px] rounded-xl border-borderGray bg-white">
-            <h3>School Notifications</h3>
+            <h3>Notifications</h3>
 
                 {notificationData?.map((data, index) => (
             <div key={index} className='flex flex-row justify-between my-6'>
