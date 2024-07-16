@@ -1,3 +1,4 @@
+import Breadcrumb from "@/components/Breadcrumb/Breadcrumb";
 import PrimaryBtn from "@/components/dashboard/PrimaryBtn";
 import Link from "next/link";
 import React from "react";
@@ -6,8 +7,13 @@ import { BsHouseDoor } from "react-icons/bs";
 import { IoMdCheckmark } from "react-icons/io";
 
 const page = () => {
+  const breadcrumb = [
+    {name:"Dashboard", path:"/admin-dashboard"},
+    {name:"School Management", path:"/school-management"},
+  ];
   return (
     <>
+    <Breadcrumb items={breadcrumb}/>
       <main className="w-[98%] h-full p-3 m-auto border-[1px] rounded-xl border-borderGray bg-white">
           <div className="flex w-[100%] flex-col md:flex-row  md:items-center justify-between">
             <h3 className="">School Management</h3>
@@ -28,7 +34,7 @@ const page = () => {
              <h4>Campus Limitation</h4>
              <div className=" flex item-center px-4 border-[#EDEDEE] border-[1px] py-2 w-[30%] rounded-full">
                 <input
-                type="text"
+                type="number"
                 placeholder="5"
                 className="w-full text-[14px] border-none outline-none"
                 />

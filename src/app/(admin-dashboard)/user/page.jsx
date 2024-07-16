@@ -7,6 +7,7 @@ import Pagination from '@mui/material/Pagination';
 import { IoMdAdd } from "react-icons/io";
 import { Avatar } from '@mui/material';
 import { FaArrowLeft } from "react-icons/fa6";
+import Breadcrumb from '@/components/Breadcrumb/Breadcrumb';
 
 const AvatarWithText = ({ src, name }) => {
     return (
@@ -52,7 +53,7 @@ const UsersList = () => {
         <section className="w-full my-3">
           <div className="flex flex-col md:flex-row justify-between items-centers mb-3">
             <div className="flex w-[80%] md:w-[40%] flex-col md:flex-row  md:items-center justify-between">
-              <h3 className="">Coupon Management</h3>
+              <h3 className="">Our Users</h3>
             </div>
 
             <div className='flex '>
@@ -62,9 +63,9 @@ const UsersList = () => {
         </button>
 
                 <button className=" flex justify-between px-3  mt-2 md:mt-0 rounded-full text-[14px] items-center border-[1px] border-[#682D9133] bg-[#682D910F] text-primaryPurple">
-              <Link href={'/subscription-setting'} className="flex items-center">
+              <Link href={'/school-users'} className="flex items-center">
                 <IoMdAdd className="text-xl"/>
-                New User
+                School Users
               </Link>
                   </button>
             </div>
@@ -124,10 +125,17 @@ const UsersList = () => {
     );
   };
 const page = () => {
+  const breadcrumb = [
+    {name:"Dashboard", path:"/admin-dashboard"},
+    {name:"Users", path:"/user"},
+  ];
   return (
+    <>
+    <Breadcrumb items={breadcrumb}/>
     <main className="w-[98%] p-3 m-auto border-[1px] rounded-xl border-borderGray bg-white">
         <UsersList/>
     </main>
+    </>
   )
 }
 

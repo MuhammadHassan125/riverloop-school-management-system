@@ -6,6 +6,7 @@ import Link from "next/link";
 import Pagination from '@mui/material/Pagination';
 import { IoMdAdd } from "react-icons/io";
 import PrimaryBtn from '@/components/dashboard/PrimaryBtn';
+import Breadcrumb from '@/components/Breadcrumb/Breadcrumb';
 
 const SubscriptionMembershipPlans = () => {
   const data = [
@@ -16,7 +17,10 @@ const SubscriptionMembershipPlans = () => {
       school: "Biffco Enterprises Ltd.",
       expire: "21 Sep, 2020",
       price:"$5,90",
-      icon: <div className="flex flex-row gap-1 justify-evenly text-primaryText text-[17px]"><IoEyeOutline /><FaPen/><AiOutlineDelete /></div>,
+      icon: <div className="flex flex-row gap-1 justify-evenly text-primaryText text-[17px]">
+        <IoEyeOutline className='hover:text-primaryPurple hover:cursor-pointer'/><FaPen className='hover:text-primaryPurple hover:cursor-pointer'/>
+        <AiOutlineDelete className='hover:text-primaryPurple hover:cursor-pointer'/>
+        </div>,
     },
     {
       id: 2,
@@ -25,8 +29,11 @@ const SubscriptionMembershipPlans = () => {
       school: "Acme Co.",
       expire: "21 Sep, 2020",
       price:"$5,90",
-      icon: <div className="flex flex-row gap-1 justify-evenly text-primaryText text-[17px]"><IoEyeOutline /><FaPen/><AiOutlineDelete /></div>,
-    },
+      icon: <div className="flex flex-row gap-1 justify-evenly text-primaryText text-[17px]">
+        <IoEyeOutline className='hover:text-primaryPurple hover:cursor-pointer'/><FaPen className='hover:text-primaryPurple hover:cursor-pointer'/>
+        <AiOutlineDelete className='hover:text-primaryPurple hover:cursor-pointer'/>
+        </div>,
+     },
     {
       id: 4,
       name: "Lorem ipsum dolor sit",
@@ -34,7 +41,10 @@ const SubscriptionMembershipPlans = () => {
       school: "Riverloop",
       expire: "21 Sep, 2020",
       price:"$5,90",
-      icon: <div className="flex flex-row gap-1 justify-evenly text-primaryText text-[17px]"><IoEyeOutline /><FaPen/><AiOutlineDelete /></div>,
+      icon: <div className="flex flex-row gap-1 justify-evenly text-primaryText text-[17px]">
+        <IoEyeOutline className='hover:text-primaryPurple hover:cursor-pointer'/><FaPen className='hover:text-primaryPurple hover:cursor-pointer'/>
+        <AiOutlineDelete className='hover:text-primaryPurple hover:cursor-pointer'/>
+        </div>,
     },
     {
       id: 5,
@@ -43,7 +53,10 @@ const SubscriptionMembershipPlans = () => {
       school: "Binford Ltd.",
       price:"$5,90",
       expire: "21 Sep, 2020",
-      icon: <div className="flex flex-row gap-1 justify-evenly text-primaryText text-[17px]"><IoEyeOutline /><FaPen/><AiOutlineDelete /></div>,
+      icon: <div className="flex flex-row gap-1 justify-evenly text-primaryText text-[17px]">
+        <IoEyeOutline className='hover:text-primaryPurple hover:cursor-pointer'/><FaPen className='hover:text-primaryPurple hover:cursor-pointer'/>
+        <AiOutlineDelete className='hover:text-primaryPurple hover:cursor-pointer'/>
+        </div>,
     },
     {
         id: 6,
@@ -52,7 +65,10 @@ const SubscriptionMembershipPlans = () => {
         school: "Binford Ltd.",
         price:"$5,90",
         expire: "21 Sep, 2020",
-        icon: <div className="flex flex-row gap-1 justify-evenly text-primaryText text-[17px]"><IoEyeOutline /><FaPen/><AiOutlineDelete /></div>,
+        icon: <div className="flex flex-row gap-1 justify-evenly text-primaryText text-[17px]">
+        <IoEyeOutline className='hover:text-primaryPurple hover:cursor-pointer'/><FaPen className='hover:text-primaryPurple hover:cursor-pointer'/>
+        <AiOutlineDelete className='hover:text-primaryPurple hover:cursor-pointer'/>
+        </div>,
       },
       {
         id: 7,
@@ -61,7 +77,10 @@ const SubscriptionMembershipPlans = () => {
         school: "Binford Ltd.",
         price:"$5,90",
         expire: "21 Sep, 2020",
-        icon: <div className="flex flex-row gap-1 justify-evenly text-primaryText text-[17px]"><IoEyeOutline /><FaPen/><AiOutlineDelete /></div>,
+        icon: <div className="flex flex-row gap-1 justify-evenly text-primaryText text-[17px]">
+        <IoEyeOutline className='hover:text-primaryPurple hover:cursor-pointer'/><FaPen className='hover:text-primaryPurple hover:cursor-pointer'/>
+        <AiOutlineDelete className='hover:text-primaryPurple hover:cursor-pointer'/>
+        </div>,
       },
       {
         id: 8,
@@ -70,7 +89,10 @@ const SubscriptionMembershipPlans = () => {
         school: "Binford Ltd.",
         price:"$5,90",
         expire: "21 Sep, 2020",
-        icon: <div className="flex flex-row gap-1 justify-evenly text-primaryText text-[17px]"><IoEyeOutline /><FaPen/><AiOutlineDelete /></div>,
+        icon: <div className="flex flex-row gap-1 justify-evenly text-primaryText text-[17px]">
+        <IoEyeOutline className='hover:text-primaryPurple hover:cursor-pointer'/><FaPen className='hover:text-primaryPurple hover:cursor-pointer'/>
+        <AiOutlineDelete className='hover:text-primaryPurple hover:cursor-pointer'/>
+        </div>,
       },
       {
         id: 9,
@@ -79,7 +101,10 @@ const SubscriptionMembershipPlans = () => {
         school: "Binford Ltd.",
         price:"$5,90",
         expire: "21 Sep, 2020",
-        icon: <div className="flex flex-row gap-1 justify-evenly text-primaryText text-[17px]"><IoEyeOutline /><FaPen/><AiOutlineDelete /></div>,
+        icon: <div className="flex flex-row gap-1 justify-evenly text-primaryText text-[17px]">
+        <IoEyeOutline className='hover:text-primaryPurple hover:cursor-pointer'/><FaPen className='hover:text-primaryPurple hover:cursor-pointer'/>
+        <AiOutlineDelete className='hover:text-primaryPurple hover:cursor-pointer'/>
+        </div>,
       },
   ];
   return (
@@ -168,10 +193,17 @@ const SubscriptionMembershipPlans = () => {
 };
 
 const page = () => {
+  const breadcrumb = [
+    {name:"Dashboard", path:"/admin-dashboard"},
+    {name:"All Membership Plan", path:"/all-membership-plan"},
+  ];
   return (
+    <>
+    <Breadcrumb items={breadcrumb}/>
     <main className="w-[98%] p-3 m-auto border-[1px] rounded-xl border-borderGray bg-white">
         <SubscriptionMembershipPlans/>
     </main>
+    </>
   )
 }
 

@@ -138,12 +138,12 @@ const TopCardsSection = () => {
 
 const AdminPageTable = () => {
   const data = [
-    { id: 1, name: 'Lorem ipsum', age: '#', email: 'Monthly', lorem:"Lorem ipsum", date:"Feb 23, 2024 - Feb 29, 2024", icon:<TbDots /> },
-    { id: 2, name: 'Lorem ipsum', age: '#', email: 'Monthly', lorem:"Lorem ipsum", date:"Feb 23, 2024 - Feb 29, 2024", icon:<TbDots /> },
-    { id: 4, name: 'Lorem ipsum', age: '#', email: 'Monthly', lorem:"Lorem ipsum", date:"Feb 23, 2024 - Feb 29, 2024", icon:<TbDots /> },
-    { id: 5, name: 'Lorem ipsum', age: '#', email: 'Monthly', lorem:"Lorem ipsum", date:"Feb 23, 2024 - Feb 29, 2024", icon:<TbDots /> },
-    { id: 6, name: 'Lorem ipsum', age: '#', email: 'Monthly', lorem:"Lorem ipsum", date:"Feb 23, 2024 - Feb 29, 2024", icon:<TbDots />},
-    { id: 6, name: 'Lorem ipsum', age: '#', email: 'Monthly', lorem:"Lorem ipsum", date:"Feb 23, 2024 - Feb 29, 2024", icon:<TbDots />},
+    { id: 1, name: 'Lorem ipsum', age: '#', email: 'Monthly', lorem:"Lorem ipsum", date:"Feb 23, 2024 - Feb 29, 2024", icon:<TbDots className="hover:text-primaryPurple hover:cursor-pointer"/> },
+    { id: 2, name: 'Lorem ipsum', age: '#', email: 'Monthly', lorem:"Lorem ipsum", date:"Feb 23, 2024 - Feb 29, 2024", icon:<TbDots className="hover:text-primaryPurple hover:cursor-pointer"/> },
+    { id: 4, name: 'Lorem ipsum', age: '#', email: 'Monthly', lorem:"Lorem ipsum", date:"Feb 23, 2024 - Feb 29, 2024", icon:<TbDots className="hover:text-primaryPurple hover:cursor-pointer"/> },
+    { id: 5, name: 'Lorem ipsum', age: '#', email: 'Monthly', lorem:"Lorem ipsum", date:"Feb 23, 2024 - Feb 29, 2024", icon:<TbDots className="hover:text-primaryPurple hover:cursor-pointer"/> },
+    { id: 6, name: 'Lorem ipsum', age: '#', email: 'Monthly', lorem:"Lorem ipsum", date:"Feb 23, 2024 - Feb 29, 2024", icon:<TbDots className="hover:text-primaryPurple hover:cursor-pointer"/>},
+    { id: 6, name: 'Lorem ipsum', age: '#', email: 'Monthly', lorem:"Lorem ipsum", date:"Feb 23, 2024 - Feb 29, 2024", icon:<TbDots className="hover:text-primaryPurple hover:cursor-pointer"/>},
   ];
   return (
     <>

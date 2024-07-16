@@ -5,6 +5,7 @@ import { AiOutlineDelete } from "react-icons/ai";
 import Link from "next/link";
 import Pagination from '@mui/material/Pagination';
 import { IoMdAdd } from "react-icons/io";
+import Breadcrumb from '@/components/Breadcrumb/Breadcrumb';
 
 const CouponTable = () => {
   const data = [
@@ -129,10 +130,17 @@ const CouponTable = () => {
 };
 
 const page = () => {
+  const breadcrumb = [
+    {name:"Dashboard", path:"/admin-dashboard"},
+    {name:"Coupon", path:"/coupon"},
+  ];
   return (
+    <>
+    <Breadcrumb items={breadcrumb}/>
     <main className="w-[98%] p-3 m-auto border-[1px] rounded-xl border-borderGray bg-white">
         <CouponTable/>
     </main>
+    </>
   )
 }
 

@@ -7,6 +7,7 @@ import { FaPen } from "react-icons/fa";
 import { AiOutlineDelete } from "react-icons/ai";
 import Link from "next/link";
 import Pagination from '@mui/material/Pagination';
+import Breadcrumb from "@/components/Breadcrumb/Breadcrumb";
 
 const AvatarWithText = ({ src, name }) => {
     return (
@@ -159,10 +160,17 @@ const SubscriptionTable = () => {
   );
 };
 const page = () => {
+  const breadcrumb = [
+    {name:"Dashboard", path:"/admin-dashboard"},
+    {name:"Subscription", path:"/subscription"},
+  ];
   return (
+    <>
+    <Breadcrumb items={breadcrumb}/>
     <main className="w-[98%] p-3 m-auto border-[1px] rounded-xl border-borderGray bg-white">
       <SubscriptionTable />
     </main>
+    </>
   );
 };
 

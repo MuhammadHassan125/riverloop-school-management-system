@@ -7,6 +7,7 @@ import { Avatar } from "@mui/material";
 import { TbDots } from "react-icons/tb";
 import Pagination from '@mui/material/Pagination';
 import Link from "next/link";
+import Breadcrumb from "@/components/Breadcrumb/Breadcrumb";
 
 const AvatarWithText = ({ src, name }) => {
     return (
@@ -110,8 +111,15 @@ const RecentUsersTable = () => {
     );
   };
 const page = () => {
+  const breadcrumb = [
+    {name:"Dashboard", path:"/admin-dashboard"},
+    {name:"Subscription", path:"/subscription"},
+    {name:"Subscription Setting", path:"/subscription-setting"},
+  ]
   return (
-    <main className="w-[98%] p-3 m-auto border-[1px] rounded-xl border-borderGray bg-white">
+    <>
+    <Breadcrumb items={breadcrumb}/>
+        <main className="w-[98%] p-3 m-auto border-[1px] rounded-xl border-borderGray bg-white">
       {/* top heading  */}
       <div className="flex flex-col md:flex-row md:items-center justify-between mb-4">
         <h3 className="">Subscription Settings</h3>
@@ -178,6 +186,8 @@ const page = () => {
 
       <RecentUsersTable/>
     </main>
+    </>
+
   );
 };
 

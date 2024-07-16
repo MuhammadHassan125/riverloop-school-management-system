@@ -8,6 +8,7 @@ import { Avatar } from '@mui/material';
 import { IoEyeOutline } from "react-icons/io5";
 import { FaPen } from "react-icons/fa";
 import { AiOutlineDelete } from "react-icons/ai";
+import Breadcrumb from '@/components/Breadcrumb/Breadcrumb';
 
 const AvatarWithText = ({ src, name }) => {
     return (
@@ -126,8 +127,14 @@ const AvatarWithText = ({ src, name }) => {
     )
 };
 const page = () => {
+  const breadcrumb = [
+    {name:"Dashboard", path:"/admin-dashboard"},
+    {name:"Users", path:"/user"},
+    {name:"School Users", path:"/school-users"},
+  ];
   return (
     <>
+    <Breadcrumb items={breadcrumb}/>
         <main className="w-[98%] p-3 m-auto border-[1px] rounded-xl border-borderGray bg-white">
         <section className="w-full my-3">
         <div className="flex flex-col md:flex-row justify-between items-center mb-3">
@@ -143,7 +150,7 @@ const page = () => {
             </div>{" "}
           </div>
             
-            <Link href={'/subscription-setting'}>
+            <Link href={'/user'}>
           <button className="rounded-full border-[1px] border-[#EDEDEE] bg-[#F9FAFC]  py-1 px-3 font-medium text-[14px] flex items-center justify-evenly">
           <FaArrowLeft className='mr-2'/>
           Back

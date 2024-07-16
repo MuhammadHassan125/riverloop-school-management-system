@@ -4,6 +4,13 @@ import Link from "next/link";
 import { FaArrowLeft } from "react-icons/fa";
 import PrimaryBtn from "@/components/dashboard/PrimaryBtn";
 import { IoMdCheckmark } from "react-icons/io";
+import Breadcrumb from "@/components/Breadcrumb/Breadcrumb";
+
+const breadcrumb = [
+  {name:"Dashboard", path:"/admin-dashboard"},
+  {name:"All Membership Plan", path:"/all-membership-plan"},
+  {name:"Add Membership Plan", path:"/add-membership-plan"},
+];
 
 const Page = () => {
   const [activeTab, setActiveTab] = useState("general");
@@ -45,6 +52,8 @@ const Page = () => {
   ];
 
   return (
+    <>
+    <Breadcrumb items={breadcrumb}/>
     <main className="w-[98%] h-[100vh] p-3 m-auto border-[1px] rounded-xl border-borderGray bg-white">
       <div className="flex flex-row justify-between items-center mb-3">
         <div className="flex w-[80%] md:w-[40%] flex-col md:flex-row md:items-center justify-between">
@@ -167,6 +176,7 @@ const Page = () => {
         )}
       </div>
     </main>
+    </>
   );
 };
 
