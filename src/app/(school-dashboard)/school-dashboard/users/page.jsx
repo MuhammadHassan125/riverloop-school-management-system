@@ -47,9 +47,9 @@ const columns = [
         Created: "21 Sep, 2020",
         icon: (
           <div className="flex text-primaryText gap-2 text-lg">
-            <FiEye />
-            <MdModeEdit />
-            <AiOutlineDelete />
+            <FiEye className="hover:bg-primaryBackground hover:text-primaryPurple hover:cursor-pointer"/>
+            <MdModeEdit className="hover:bg-primaryBackground hover:text-primaryPurple hover:cursor-pointer"/>
+            <AiOutlineDelete className="hover:bg-primaryBackground hover:text-primaryPurple hover:cursor-pointer"/>
           </div>
         ),
     },
@@ -75,9 +75,9 @@ const columns = [
         Created: "21 Sep, 2020",
         icon: (
           <div className="flex text-primaryText gap-2 text-lg">
-            <FiEye />
-            <MdModeEdit />
-            <AiOutlineDelete />
+            <FiEye className="hover:bg-primaryBackground hover:text-primaryPurple hover:cursor-pointer"/>
+            <MdModeEdit className="hover:bg-primaryBackground hover:text-primaryPurple hover:cursor-pointer"/>
+            <AiOutlineDelete className="hover:bg-primaryBackground hover:text-primaryPurple hover:cursor-pointer"/>
           </div>
         ),
     },
@@ -103,9 +103,9 @@ const columns = [
         Created: "21 Sep, 2020",
         icon: (
           <div className="flex text-primaryText gap-2 text-lg">
-            <FiEye />
-            <MdModeEdit />
-            <AiOutlineDelete />
+            <FiEye className="hover:bg-primaryBackground hover:text-primaryPurple hover:cursor-pointer"/>
+            <MdModeEdit className="hover:bg-primaryBackground hover:text-primaryPurple hover:cursor-pointer"/>
+            <AiOutlineDelete className="hover:bg-primaryBackground hover:text-primaryPurple hover:cursor-pointer"/>
           </div>
         ),
     },

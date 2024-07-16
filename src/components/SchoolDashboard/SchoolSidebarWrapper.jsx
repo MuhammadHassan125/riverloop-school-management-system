@@ -37,14 +37,14 @@ const SchoolSidebarWrapper = ({isSidebarOpen}) => {
             />
             <SidebarItem
               icon={<Layers size={20} />}
-              text="Calender"
+              text="Calendar"
               link="/school-dashboard/calendar"
             />
-            <SidebarItem
+            {/* <SidebarItem
               icon={<PiChalkboardTeacher size={20}/>}
               text="Teachers"
               link="/school-dashboard/teachers"
-            />
+            /> */}
             <SidebarItem
               icon={<FiUsers  size={20} />}
               text="Users"
@@ -55,11 +55,11 @@ const SchoolSidebarWrapper = ({isSidebarOpen}) => {
               text="Office"
               link="/school-dashboard/office"
             />
-            <SidebarItem
+            {/* <SidebarItem
               icon={<IoSettingsOutline  size={20} />}
               text="School Settings"
               link="#"
-            />
+            /> */}
           
           </Sidebar>
     </>

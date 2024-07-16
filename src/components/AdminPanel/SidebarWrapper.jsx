@@ -21,6 +21,9 @@ const isActive = (path) => {
       return (
     <>
     <Sidebar isSidebarOpen={isSidebarOpen}>
+    {isSidebarOpen && (
+            <p className='text-primaryText'>Admin Dashboard</p>
+        )}
             <SidebarItem
               icon={<LayoutDashboard size={20} />}
               text="Dashboard"
@@ -42,7 +45,7 @@ const isActive = (path) => {
             <SidebarItem
               icon={<Layers size={20} />}
               text="Payment Gateway"
-              link="#"
+              link="/school-dashboard/checkout"
             />
             <SidebarItem icon={<Flag size={20} />} text="Users" link="/user" />
             <hr className="my-3" />
@@ -51,7 +54,7 @@ const isActive = (path) => {
               text="School Management"
               link="/school-management"
             />
-            <SidebarItem
+             <SidebarItem
               icon={<Settings size={20} />}
               text="MemberShip Plan"
               link="/all-membership-plan"

@@ -13,8 +13,6 @@ registerLicense(
   "Ngo9BigBOggjHTQxAR8/V1NCaF5cXmZCdkx0WmFZfVpgcl9HZFZTTWY/P1ZhSXxXdkJjWn5WcXBWRmJYUkQ="
 );
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
-import { MdOutlineKeyboardArrowLeft } from "react-icons/md";
-import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 import Breadcrumb from '@/components/Breadcrumb/Breadcrumb';
 
 const data = [
@@ -42,7 +40,11 @@ const breadcrumbItems = [
   ];
 
 const Page = () => {
+  const [isOpen, setIsOpen] = React.useState(false);
 
+  const toggleDropdown = () => {
+    setIsOpen(!isOpen);
+  };
   return (
     <React.Fragment>
         <Breadcrumb items={breadcrumbItems}/>
@@ -78,10 +80,22 @@ const Page = () => {
         </div>
 
         <div className='flex flex-row items-center gap-3 justify-between'>
-            <PrimaryInput
-              placeholder="Filter"
-              icon={<MdOutlineKeyboardArrowDown />}
-            />
+        <div className="relative">
+      <button
+        onClick={toggleDropdown}
+        className="w-full flex justify-between items-center py-[7px] px-4 border-[2px] text-primaryText outline-none border-[#EDEDEE] rounded-full"
+      >
+        Filter <MdOutlineKeyboardArrowDown />
+      </button>
+      {isOpen && (
+        <div className="absolute z-20 right-0 mt-2 py-2 w-48 bg-white border rounded-lg shadow-lg">
+          {/* Dropdown content */}
+          <a onClick={toggleDropdown} className="block px-4 py-1 text-gray-800 hover:bg-gray-300">Option 1</a>
+          <a onClick={toggleDropdown} className="block px-4 py-1 text-gray-800 hover:bg-gray-300">Option 2</a>
+          <a onClick={toggleDropdown} className="block px-4 py-1 text-gray-800 hover:bg-gray-300">Option 3</a>
+        </div>
+      )}
+    </div>
         </div>
     </div>
 

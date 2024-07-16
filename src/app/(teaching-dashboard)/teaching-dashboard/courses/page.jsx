@@ -100,6 +100,7 @@ const page = () => {
                         alt="img"
                         width={600}
                         height={600}
+                        className="hover:scale-105 transition-all duration-300"
                         />
                         <h4 className="font-semibold">{course.heading}</h4>
                         <div className="flex justify-between items-center">

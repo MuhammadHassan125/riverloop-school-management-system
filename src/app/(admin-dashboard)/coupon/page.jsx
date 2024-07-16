@@ -15,7 +15,11 @@ const CouponTable = () => {
       school: "Biffco Enterprises Ltd.",
       expire: "21 Sep, 2020",
       lorem:"Lorem ipsum",
-      icon: <div className="flex justify-evenly text-primaryText text-[17px]"><IoEyeOutline /><FaPen/><AiOutlineDelete /></div>,
+      icon: <div className="flex justify-evenly text-primaryTex text-[17px]">
+        <IoEyeOutline className="hover:text-primaryPurple hover:cursor-pointer"/>
+        <FaPen className="hover:text-primaryPurple hover:cursor-pointer"/>
+        <AiOutlineDelete className="hover:text-primaryPurple hover:cursor-pointer"/>
+        </div>,
     },
     {
       id: 2,
@@ -24,8 +28,11 @@ const CouponTable = () => {
       school: "Acme Co.",
       expire: "21 Sep, 2020",
       lorem:"Lorem ipsum",
-      icon: <div className="flex justify-evenly text-primaryText text-[17px]"><IoEyeOutline /><FaPen/><AiOutlineDelete /></div>,
-    },
+      icon: <div className="flex justify-evenly text-primaryTex text-[17px]">
+      <IoEyeOutline className="hover:text-primaryPurple hover:cursor-pointer"/>
+      <FaPen className="hover:text-primaryPurple hover:cursor-pointer"/>
+      <AiOutlineDelete className="hover:text-primaryPurple hover:cursor-pointer"/>
+      </div>,    },
     {
       id: 4,
       name: "Lorem ipsum dolor sit",
@@ -33,8 +40,11 @@ const CouponTable = () => {
       school: "Riverloop",
       expire: "21 Sep, 2020",
       lorem:"Lorem ipsum",
-      icon: <div className="flex justify-evenly text-primaryText text-[17px]"><IoEyeOutline /><FaPen/><AiOutlineDelete /></div>,
-    },
+      icon: <div className="flex justify-evenly text-primaryTex text-[17px]">
+      <IoEyeOutline className="hover:text-primaryPurple hover:cursor-pointer"/>
+      <FaPen className="hover:text-primaryPurple hover:cursor-pointer"/>
+      <AiOutlineDelete className="hover:text-primaryPurple hover:cursor-pointer"/>
+      </div>,    },
     {
       id: 5,
       name: "Lorem ipsum dolor sit",
@@ -42,8 +52,11 @@ const CouponTable = () => {
       school: "Binford Ltd.",
       lorem:"Lorem ipsum",
       expire: "21 Sep, 2020",
-      icon: <div className="flex justify-evenly text-primaryText text-[17px]"><IoEyeOutline /><FaPen/><AiOutlineDelete /></div>,
-    },
+      icon: <div className="flex justify-evenly text-primaryTex text-[17px]">
+      <IoEyeOutline className="hover:text-primaryPurple hover:cursor-pointer"/>
+      <FaPen className="hover:text-primaryPurple hover:cursor-pointer"/>
+      <AiOutlineDelete className="hover:text-primaryPurple hover:cursor-pointer"/>
+      </div>,    },
   ];
   return (
     <>
@@ -53,12 +66,12 @@ const CouponTable = () => {
             <h3 className="">Coupon Management</h3>
           </div>
             
-              <button className=" flex justify-between px-3  mt-2 md:mt-0 rounded-full text-[14px] items-center border-[1px] border-[#682D9133] bg-[#682D910F] text-primaryPurple">
+              {/* <button className=" flex justify-between px-3  mt-2 md:mt-0 rounded-full text-[14px] items-center border-[1px] border-[#682D9133] bg-[#682D910F] text-primaryPurple">
             <Link href={'/subscription-setting'} className="flex items-center">
               <IoMdAdd className="text-xl"/>
               Create Coupon
             </Link>
-                </button>
+                </button> */}
         </div>
         <div className="overflow-x-auto rounded-sm">
           <table className="min-w-full bg-white border border-gray-200">

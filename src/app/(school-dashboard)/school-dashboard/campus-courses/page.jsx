@@ -1,15 +1,26 @@
+'use client';
+import React, { useState } from "react";
 import Breadcrumb from "@/components/Breadcrumb/Breadcrumb";
 import Link from "next/link";
-import React from "react";
 import { FaArrowLeft } from "react-icons/fa";
 import PrimaryBtn from "@/components/dashboard/PrimaryBtn";
 import { RiSearchLine } from "react-icons/ri";
 import { FiPlus } from "react-icons/fi";
-import { FaPen } from "react-icons/fa6";
+import { FaPen } from "react-icons/fa";
 import { IoMdCheckmark } from "react-icons/io";
-import { FaRegClock } from "react-icons/fa6";
+import { FaRegClock } from "react-icons/fa";
 import PrimaryInput from "@/components/PrimaryInput";
 import { IoMdClose } from "react-icons/io";
+import Box from "@mui/material/Box";
+import Modal from "@mui/material/Modal";
+import Fade from "@mui/material/Fade";
+import Typography from "@mui/material/Typography";
+import Backdrop from "@mui/material/Backdrop";
+import Input from "@/components/Input";
+import { IoTimeOutline } from "react-icons/io5";
+import { MdOutlineClose } from "react-icons/md";
+import { MdOutlineSubtitles } from "react-icons/md";
+
 
 const breadcrumb = [
   { name: "Dashboard", path: "/school-dashboard" },
@@ -35,12 +46,42 @@ const campusData = [
     para: "24 december, 11am to 6pm | 26 december, 9am to 6pm",
   },
 ];
-const page = () => {
+
+const style = {
+  position: "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  width: 400,
+  bgcolor: "background.paper",
+  border: "2px solid #000",
+  boxShadow: 24,
+  p: 4,
+};
+
+const Page = () => {
+  const [open, setOpen] = useState(false);
+  const [Secondopen, setSecondOpen] = useState(false);
+
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+  const handleSecondOpen = () => setSecondOpen(true);
+  const handleSecondClose = () => setSecondOpen(false);
+
+  const handleBackClick = (e) => {
+    e.preventDefault();
+    if (window.confirm('Do you want to go back from this page? You might be lose your entered data')) {
+      window.history.back();
+    } else {
+      
+    }
+  };
+
   return (
     <React.Fragment>
       <Breadcrumb items={breadcrumb} />
       <main className="w-[98%] h-min-screen p-3 m-auto border-[1px] rounded-xl border-borderGray bg-white">
-        {/* top heading  */}
+        {/* Top heading */}
         <div className="flex flex-col md:flex-row justify-between items-center mb-6">
           <div className="flex w-[100%] md:w-[70%]  flex-col md:flex-row md:items-center justify-between">
             <h3 className="">Editing Campus01 Informations</h3>
@@ -55,7 +96,7 @@ const page = () => {
           </div>
 
           <div className="flex md:items-center flex-row gap-4">
-            <Link href={"/school-dashboard/campus"}>
+            <Link href={"/school-dashboard/campus"} onClick={handleBackClick}>
               <PrimaryBtn
                 text={"Back"}
                 icon={<FaArrowLeft />}
@@ -65,19 +106,19 @@ const page = () => {
               />
             </Link>
 
-            <Link href={"/school-dashboard/new-campus-courses"}>
-              <PrimaryBtn
-                text={"Add Course"}
-                bg={"#682D91"}
-                color={"white"}
-                icon={<FiPlus className="text-lg" />}
-              />
-            </Link>
+            <PrimaryBtn
+              text={"Add Holiday"}
+              bg={"#682D91"}
+              color={"white"}
+              icon={<FiPlus className="text-lg" />}
+              onClick={handleOpen}
+            />
           </div>
         </div>
 
+        {/* Main content */}
         <div className="flex flex-col lg:flex-row justify-between">
-          {/* left side  */}
+          {/* Left side */}
           <div className="lg:w-[45%] w-[100%] flex flex-col gap-5">
             <div>
               <h4>Campus Name</h4>
@@ -94,35 +135,31 @@ const page = () => {
               </p>
             </div>
 
-            {/* campus holidays */}
+            {/* Campus holidays */}
             <div className="flex flex-row justify-between items-center">
               <div className="flex gap-3 items-center">
                 <FaRegClock className="text-primaryText text-lg" />
-                <h4>Campus Hollidays</h4>
+                <h4>Campus Holidays</h4>
               </div>
 
               <PrimaryBtn
                 type={"submit"}
-                text={"Add Holliday"}
+                text={"Add Holiday"}
                 bg={"#682D91"}
                 color={"white"}
                 icon={<FiPlus className="text-lg" />}
+                onClick={handleOpen}
               />
             </div>
 
-            {/* campus grid data  */}
+            {/* Campus grid data */}
             <div className="flex flex-row flex-wrap gap-3 justify-between items-center">
               {campusData.map((item, index) => (
-                <>
-                  <div className="flex gap-3 items-center" key={index}>
-                    <h4>{item.name}</h4>
-                  </div>
-
-                  <div className="flex items-center gap-3 text-primaryText">
-                    <p className=" text-[14px]">{item.para}</p>
-                    <FaPen />
-                  </div>
-                </>
+                <div key={index} className="flex items-center gap-3">
+                  <h4>{item.name}</h4>
+                  <p className="text-[14px]">{item.para}</p>
+                  <FaPen />
+                </div>
               ))}
             </div>
 
@@ -137,7 +174,7 @@ const page = () => {
             </div>
           </div>
 
-          {/* right side  */}
+          {/* Right side */}
           <div className="lg:w-[45%] w-[100%] flex flex-col gap-5">
             <div>
               <h4>Location</h4>
@@ -148,7 +185,7 @@ const page = () => {
               />
             </div>
 
-            <p>google map will come here</p>
+            <p>Google map will come here</p>
 
             {/* Laboratory */}
             <div className="flex flex-row justify-between items-center">
@@ -161,44 +198,117 @@ const page = () => {
                 text={"Add Laboratory"}
                 bg={"#682D91"}
                 color={"white"}
+                onClick={handleSecondOpen}
                 icon={<FiPlus className="text-lg" />}
               />
             </div>
 
-            {/* labortory tabs data  */}
+            {/* Laboratory tabs data */}
             <div className="flex flex-row flex-wrap gap-3 items-center">
-              <button className="border-[1px] flex items-center gap-3 text-[14px] border-[#27C762] px-3 py-1 rounded-full">
+              <button  className="border-[1px] flex items-center gap-3 text-[14px] border-[#27C762] px-3 py-1 rounded-full">
                 Tech Laboratory
                 <IoMdClose />
-                </button>
-
-                <button className="border-[1px] flex items-center gap-3 text-[14px] border-[#27C762] px-3 py-1 rounded-full">
-                Laboratory Medicine
-                <IoMdClose />
-                </button>
-
-                <button className="border-[1px] flex items-center gap-3 text-[14px] border-[#27C762] px-3 py-1 rounded-full">
-                Lab 03
-                <IoMdClose />
-                </button>
-
-                <button className="border-[1px] flex items-center gap-3 text-[14px] border-[#27C762] px-3 py-1 rounded-full">
-                Lab 04
-                <IoMdClose />
-                </button>
-
-                <button className="border-[1px] flex items-center gap-3 text-[14px] border-[#27C762] px-3 py-1 rounded-full">
-                Laboratory of Inventions
-                <IoMdClose />
-                </button>
+              </button>
+              {/* Other buttons */}
             </div>
-
-          
           </div>
         </div>
       </main>
+
+      {/* Add holiday Modal */}
+      <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="transition-modal-title"
+        aria-describedby="transition-modal-description"
+        BackdropComponent={Backdrop}
+        BackdropProps={{
+          timeout: 500,
+        }}
+      >
+        <Fade in={open}>
+          <Box sx={style}>
+            <Box sx={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 2}}>
+
+            <Typography id="transition-modal-title" variant="h6" component="h2">
+              Add Campus Holiday Details
+            </Typography>
+            <MdOutlineClose className="text-2xl cursor-pointer" onClick={handleClose}/>
+            </Box>
+            <div className="mt-3">
+            <Input
+            label={'Course Title'}
+            placeholder={'Course Title'}
+            icon={<MdOutlineSubtitles />            }
+            />
+            </div>
+
+            <div className="mt-3">
+            <Input
+            label={'Course Timming Details'}
+            placeholder={'Course Timming'}
+            icon={<IoTimeOutline/>}
+            />
+            </div>
+
+          <div className="mt-6">
+            <PrimaryBtn
+                text={"Save"}
+                type={"submit"}
+                bg={"primaryPurple"}
+                color={"white"}
+                icon={<IoMdCheckmark className="text-lg" />}
+                onClick={handleClose}
+                />
+                </div>
+          </Box>
+        </Fade>
+      </Modal>
+
+
+       {/* Add Laboratory Modal */}
+       <Modal
+        open={Secondopen}
+        onClose={handleSecondClose}
+        aria-labelledby="transition-modal-title"
+        aria-describedby="transition-modal-description"
+        BackdropComponent={Backdrop}
+        BackdropProps={{
+          timeout: 500,
+        }}
+      >
+        <Fade in={Secondopen}>
+          <Box sx={style}>
+            <Box sx={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 2}}>
+
+            <Typography id="transition-modal-title" variant="h6" component="h2">
+              Add Laboratory Details
+            </Typography>
+            <MdOutlineClose className="text-2xl cursor-pointer" onClick={handleSecondClose}/>
+            </Box>
+            <div className="mt-3">
+            <Input
+            label={'Add Laboratory Name'}
+            placeholder={'Add Laborator'}
+            icon={<MdOutlineSubtitles /> }
+            />
+            </div>
+
+          <div className="mt-6">
+            <PrimaryBtn
+                text={"Save"}
+                type={"submit"}
+                bg={"primaryPurple"}
+                color={"white"}
+                icon={<IoMdCheckmark className="text-lg" />}
+                onClick={handleSecondClose}
+                />
+                </div>
+          </Box>
+        </Fade>
+      </Modal>
     </React.Fragment>
   );
 };
 
-export default page;
+export default Page;

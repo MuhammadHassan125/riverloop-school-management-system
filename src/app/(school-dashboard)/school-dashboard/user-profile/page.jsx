@@ -14,6 +14,7 @@ import { MdKeyboardArrowDown } from "react-icons/md";
 import PrimaryInput from "@/components/PrimaryInput";
 import { IoCheckmarkSharp } from "react-icons/io5";
 import { GoImage } from "react-icons/go";
+import Link from "next/link";
 
 const breadcrumb = [
     {name:"Dashboard", path:"/school-dashboard"},
@@ -29,7 +30,7 @@ const Page = () => {
     const handledit = () => {
         console.log(1);
         setEdit(!edit);
-        setContact(false); // Reset contact state when toggling edit mode
+        setContact(false);
     };
 
     const handleContact = () => {
@@ -39,9 +40,11 @@ const Page = () => {
 
   return (
     <React.Fragment>
-    <Breadcrumb items={breadcrumb}/>
-    <main className="w-[98%] m-auto p-3 h-full">
-      <div className="w-full rounded-3xl h-[40vh] bg-image-cover bg-no-repeat text-white p-6 relative">
+      <Breadcrumb items={breadcrumb}/>
+ 
+    <main className="w-[98%] m-auto px-3 h-full">
+     
+      <div className="w-[100%] rounded-3xl h-[40vh] bg-image-cover text-white p-6 relative">
         <div className="py-3 flex flex-row justify-between">
             <div className="flex flex-col">
           <h2>Hello, Neal Simmons</h2>
@@ -102,6 +105,7 @@ const Page = () => {
                     onClick={handleContact}
                     />
                 ): (
+                  <div className="flex flex-col items-end justify-end gap-2">
             <PrimaryBtn
             text={"Edit"}
             icon={<FaPen />}
@@ -110,6 +114,15 @@ const Page = () => {
             color={"black"}
             onClick={handledit}
             />
+            <Link href="/school-dashboard/new-user">
+            <PrimaryBtn
+            bg={"primaryPurple"}
+            color={"white"}
+            text={"Create New User"}
+            icon={<FaUserEdit className="text-lg" />}
+            />
+            </Link>
+            </div>
                 )
             }
           </div>

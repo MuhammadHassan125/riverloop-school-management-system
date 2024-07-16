@@ -20,9 +20,9 @@ const Layout = ({ children }) => {
         </div>
 
         <div className="flex flex-col w-full">
-          <div className="w-full h-auto py-2">
+          <div className="w-full h-[10vh]">
             {/* header  */}
-            <HeaderWrapper handleSideBarToggle={handleSideBarToggle} />
+            <HeaderWrapper handleSideBarToggle={handleSideBarToggle} isSidebarOpen={isSidebarOpen} />
             <MobileMenu className="text-black"/>
             
           </div>

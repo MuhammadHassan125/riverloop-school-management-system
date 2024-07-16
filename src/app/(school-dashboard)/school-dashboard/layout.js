@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import SchoolSidebarWrapper from "@/components/SchoolDashboard/SchoolSidebarWrapper";
 import SchoolHeaderWrapper from "@/components/SchoolDashboard/SchoolHeaderWrapper";
 import MobileMenu from "@/components/AdminPanel/MobileMenu";
+import SchoolMobileMenu from "@/components/SchoolDashboard/SchoolMobileMenu";
 
 const Layout = ({ children }) => {
   const [isSidebarOpen, setSidebarOpen] = useState(true);
@@ -20,10 +21,10 @@ const Layout = ({ children }) => {
         </div>
 
         <div className="flex flex-col h-[100vh] w-full">
-          <div className="w-full h-auto py-2">
+          <div className="w-full h-[10vh] py-4">
             {/* header  */}
-            <SchoolHeaderWrapper handleSideBarToggle={handleSideBarToggle} />
-            <MobileMenu/>
+            <SchoolHeaderWrapper handleSideBarToggle={handleSideBarToggle} isSidebarOpen={isSidebarOpen} />
+            <SchoolMobileMenu/>
             
           </div>
 

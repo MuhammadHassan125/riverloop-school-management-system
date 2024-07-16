@@ -10,7 +10,7 @@ export default function Sidebar({ children, isSidebarOpen }) {
   return (
     <>
       <aside className="h-screen">
-        <nav className="h-full flex flex-col bg-primaryBackground border-r shadow-sm transition-all duration-300">
+        <nav className="h-full flex flex-col bg-primaryBackground border-r overflow-x-hidden shadow-sm transition-all duration-300">
           <div className="p-4 pb-2 flex justify-between items-center">
             <Image
               width={150}
@@ -52,7 +52,7 @@ export function SidebarItem({ icon, text, alert, link }) {
     <li className="relative flex items-center py-1 px-0 my-1 font-medium rounded-md cursor-pointer transition-colors duration-300 group">
       <Link
         href={link || "#"}
-        className={`flex items-center w-full py-[8px] px-[10px] rounded-lg ${isActive
+        className={`flex items-center w-full py-[8px] px-[10px] rounded-lg hover:bg-[#682D910F] hover:text-primaryPurple ${isActive
             ? "bg-[#682D910F]  text-primaryPurple"
             : "hover:bg-indigo-50s text-gray-600"
           }`}

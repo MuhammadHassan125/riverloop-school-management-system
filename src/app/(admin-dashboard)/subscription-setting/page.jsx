@@ -24,7 +24,7 @@ const RecentUsersTable = () => {
         plan: <button className="border-[1px] border-[#FB9C0D] text-[#714708] bg-[#FB9C0D0F] rounded-full px-4 py-1">Member</button>,
         school: "Biffco Enterprises Ltd.",
         expire: "21 Sep, 2020",
-        icon:<TbDots />,
+        icon:<TbDots className="hover:text-primaryPurple hover:cursor-pointer"/>,
       },
       {
         id: 2,
@@ -32,7 +32,7 @@ const RecentUsersTable = () => {
         plan: <button className="border-[1px] border-[#682D91] text-[#682D91] bg-[#682D910F] rounded-full px-4 py-1">Administrator</button>,
         school: "Acme Co.",
         expire: "21 Sep, 2020",
-        icon:<TbDots />,
+        icon:<TbDots className="hover:text-primaryPurple hover:cursor-pointer"/>,
       },
       {
         id: 4,
@@ -40,7 +40,7 @@ const RecentUsersTable = () => {
         plan: <button className="border-[1px] border-[#FB9C0D] text-[#714708] bg-[#FB9C0D0F] rounded-full px-4 py-1">Member</button>,
         school: "Riverloop",
         expire: "21 Sep, 2020",
-        icon:<TbDots />,
+        icon:<TbDots className="hover:text-primaryPurple hover:cursor-pointer"/>,
       },
       
     
@@ -131,7 +131,7 @@ const page = () => {
           <div className="flex flex-col gap-3 md:gap-0 md:flex-row justify-between md:items-end  mb-4">
             <div className="flex justify-between items-center md:w-[35%] rounded-full px-4 h-10 border-[1px] border-[#EDEDEE]">
               <input
-                type="text"
+                type="number"
                 placeholder="30"
                 className="outline-none w-full bg-transparent  text-[#BECADA]"
               />
@@ -153,7 +153,7 @@ const page = () => {
           <div className="flex flex-col md:flex-row gap-3 md:gap-0 justify-between md:items-end">
             <div className="flex justify-between  items-center md:w-[35%] rounded-full px-4 h-10 border-[1px] border-[#EDEDEE]">
               <input
-                type="text"
+                type="number"
                 placeholder="30"
                 className="outline-none w-full bg-transparent  text-[#BECADA]"
               />
@@ -171,7 +171,7 @@ const page = () => {
       </div>
 
       {/* save btn  */}
-      <button className="bg-primaryPurple flex items-center justify-evenly text-white font-normal my-4 cursor-pointer rounded-full px-4 py-2 text-[14px]">
+      <button className="bg-primaryPurple hover:opacity-80 flex items-center justify-evenly text-white font-normal my-4 cursor-pointer rounded-full px-4 py-2 text-[14px]">
         <IoCheckmark className="text-xl mr-1"/>
         Save Preferences
       </button>

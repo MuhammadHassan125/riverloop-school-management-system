@@ -17,9 +17,9 @@ const breadcrumb = [
 ];
 
 const columns = [
-    { Header: "Lorem", accessor: "campus" },
-    { Header: "Lorem", accessor: "Monthly" },
-    { Header: "Lorem", accessor: "lorem" },
+    { Header: "Name", accessor: "campus" },
+    { Header: "Reference Tutor", accessor: "Monthly" },
+    { Header: "Address", accessor: "lorem" },
     { Header: "", accessor: "" },
     { Header: "", accessor: "icon" },
   ];
@@ -33,9 +33,9 @@ const columns = [
       date: "Feb 23, 2024 - Feb 29, 2024",
       icon: (
         <div className="flex text-primaryText gap-3 text-lg">
-          <FiEye />
-          <MdModeEdit />
-          <AiOutlineDelete />
+          <FiEye className='hover:bg-primaryBackground hover:rounded-full hover:cursor-pointer hover:text-primaryPurple'/>
+          <MdModeEdit className='hover:bg-primaryBackground hover:rounded-full hover:cursor-pointer hover:text-primaryPurple'/>
+          <AiOutlineDelete className='hover:bg-primaryBackground hover:rounded-full hover:cursor-pointer hover:text-primaryPurple'/>
         </div>
       ),
     },
@@ -47,9 +47,9 @@ const columns = [
         date: "Feb 23, 2024 - Feb 29, 2024",
         icon: (
           <div className="flex text-primaryText gap-3 text-lg">
-            <FiEye />
-            <MdModeEdit />
-            <AiOutlineDelete />
+            <FiEye className='hover:bg-primaryBackground hover:rounded-full hover:cursor-pointer hover:text-primaryPurple' />
+            <MdModeEdit className='hover:bg-primaryBackground hover:rounded-full hover:cursor-pointer hover:text-primaryPurple'/>
+            <AiOutlineDelete className='hover:bg-primaryBackground hover:rounded-full hover:cursor-pointer  hover:text-primaryPurple'/>
           </div>
         ),
       },
@@ -61,13 +61,14 @@ const columns = [
         date: "Feb 23, 2024 - Feb 29, 2024",
         icon: (
           <div className="flex text-primaryText gap-3 text-lg">
-            <FiEye />
-            <MdModeEdit />
-            <AiOutlineDelete />
+            <FiEye className='hover:bg-primaryBackground hover:rounded-full hover:cursor-pointer  hover:text-primaryPurple'/>
+            <MdModeEdit className='hover:bg-primaryBackground hover:rounded-full hover:cursor-pointer  hover:text-primaryPurple'/>
+            <AiOutlineDelete className='hover:bg-primaryBackground hover:rounded-full hover:cursor-pointer  hover:text-primaryPurple'/>
           </div>
         ),
       },
   ];
+
 const page = () => {
   return (
    <React.Fragment>
@@ -76,7 +77,7 @@ const page = () => {
       {/* top heading  */}
       <div className="flex flex-row justify-between items-center mb-6">
         <div className="flex w-[80%] md:w-[50%] flex-col md:flex-row md:items-center justify-between">
-          <h3 className="">School Users</h3>
+          <h3 className="">All Campus</h3>
           <div className="w-[70%] flex justify-between items-center px-2 border-[2px] rounded-full py-[6px] border-[#EDEDEE] bg-transparent ">
             <RiSearchLine className="text-xl text-primaryText mr-2" />
             <input
@@ -94,7 +95,8 @@ const page = () => {
               icon={<FaArrowLeft />}
               borderColor={"#EDEDEE"}
               color={"black"}
-              bg={"#F9FAFC"}
+              hoverTextColor={'black'}
+              hoverBg={'white'}
             />
           </Link>
 
@@ -103,6 +105,8 @@ const page = () => {
           text={"New Campus"}
           bg={'#682D91'}
           color={'white'}
+          hoverTextColor={'black'}
+          hoverBg={'white'}
           icon={<FiPlus className='text-lg'/>}
           />
           </Link>

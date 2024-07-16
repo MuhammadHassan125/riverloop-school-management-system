@@ -34,15 +34,15 @@ const SidebarWrapper = ({isSidebarOpen}) => {
             />
             <SidebarItem
               icon={<Layers size={20} />}
-              text="Calender"
+              text="Calendar"
               link="/teaching-dashboard/calendar"
             />
-            
+{/*             
             <SidebarItem
               icon={<IoSettingsOutline   size={20} />}
               text="Settings"
               link="/teaching-dashboard/settings"
-            />
+            /> */}
           </Sidebar>
     </>
   )

@@ -3,6 +3,7 @@ import React from "react";
 import { BsThreeDots } from "react-icons/bs";
 import { TbDots } from "react-icons/tb";
 import { FaArrowRight } from "react-icons/fa6";
+import Breadcrumb from "@/components/Breadcrumb/Breadcrumb";
 
 const TopCardsSection = () => {
   const cardsDetails = [
@@ -181,8 +182,12 @@ const AdminPageTable = () => {
   );
 }
 const page = () => {
+  const breadcrumb = [
+    {name:"Teacher Dashboard", path:"/teaching-dashboard"}
+  ];
   return (
     <>
+    <Breadcrumb items={breadcrumb}/>
       <main className="w-[98%] m-auto border-[1px] rounded-xl border-borderGray bg-white">
         <TopCardsSection />
         <AdminPageTable />

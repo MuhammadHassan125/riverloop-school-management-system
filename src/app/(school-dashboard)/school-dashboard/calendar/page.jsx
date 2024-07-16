@@ -72,12 +72,12 @@ const Page = () => {
         <Breadcrumb items={breadcrumbItems}/>
     <main className="w-[98%] h-[100vh] p-3 m-auto border-[1px] rounded-xl border-borderGray bg-white">
     {/* top heading section  */}
-    <div className="flex flex-row justify-between mb-5">
+    <div className="flex flex-row flex-wrap justify-between mb-5">
       <div className='flex items-center gap-5'>
         <h3>Calendar</h3>
       </div>
 
-      <div className="flex gap-3">
+      <div className="flex gap-1 flex-wrap">
         <button
         className='p-3 rounded-full bg-primaryPurple text-md text-white cursor-pointer'
         >

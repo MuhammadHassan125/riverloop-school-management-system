@@ -1,6 +1,5 @@
 'use client';
 import React,{useState} from 'react'
-import Sidebar, { SidebarItem } from '@/app/(admin-dashboard)/Sidebar'
 import { Drawer } from '@mui/material'
 import {
     LayoutDashboard,
@@ -14,11 +13,9 @@ import {
   import { MdOutlineClose } from "react-icons/md";
   import { IconButton } from "@mui/material";
 import Image from 'next/image';
-import SidebarWrapper from './SidebarWrapper';
-import SchoolSidebarWrapper from '../SchoolDashboard/SchoolSidebarWrapper';
 import Link from 'next/link';
 
-const MobileMenu = () => {
+const TeachingMobileMenu = () => {
     const [drawerOpen, setDrawerOpen] = useState(false);
     const toggleDrawer = (open) => (event) => {
         if (
@@ -67,54 +64,34 @@ const MobileMenu = () => {
 
                   {/* sidebar will come here  */}
                   <div className='flex flex-col mt-12 text-primaryText gap-6 '>
-                    <Link href={"/admin-dashboard"}>
+                    <Link href={"/teaching-dashboard"}>
                     <div className='px-8 gap-3  py-2 w-full flex hover:text-primaryPurple hover:bg-purple-200'>
                       <span><LayoutDashboard/></span>
                       <h4>Dashboard</h4>
                     </div>
                     </Link>
 
-                    <Link href={"/subscription"}>
+                    <Link href={"/teaching-dashboard/my-classes"}>
                     <div className='px-8 gap-3  py-2 w-full flex hover:text-primaryPurple hover:bg-purple-200'>
                       <span><StickyNote/></span>
-                      <h4>Subscription</h4>
+                      <h4>My Classes</h4>
                     </div>
                     </Link>
 
-                    <Link href={"/coupon"}>
+                    <Link href={"/teaching-dashboard/courses"}>
                     <div className='px-8 gap-3  py-2 w-full flex hover:text-primaryPurple hover:bg-purple-200'>
                       <span><Calendar/></span>
-                      <h4>Coupon</h4>
+                      <h4>Courses</h4>
                     </div>
                     </Link>
 
-                    <Link href={"/school-dashboard/checkout"}>
+                    <Link href={"/teaching-dashboard/calendar"}>
                     <div className='px-8 gap-3  py-2 w-full flex hover:text-primaryPurple hover:bg-purple-200'>
                       <span><Layers/></span>
-                      <h4>Payment Gateway</h4>
+                      <h4>Calendar</h4>
                     </div>
                     </Link>
 
-                    <Link href={"/user"}>
-                    <div className='px-8 gap-3  py-2 w-full flex hover:text-primaryPurple hover:bg-purple-200'>
-                      <span><Flag/></span>
-                      <h4>Users</h4>
-                    </div>
-                    </Link>
-
-                    <Link href={"/school-management"}>
-                    <div className='px-8 gap-3  py-2 w-full flex hover:text-primaryPurple hover:bg-purple-200'>
-                      <span><Settings/></span>
-                      <h4>School Management</h4>
-                    </div>
-                    </Link>
-
-                    <Link href={"/all-membership-plan"}>
-                    <div className='px-8 gap-3  py-2 w-full flex hover:text-primaryPurple hover:bg-purple-200'>
-                      <span><Settings/></span>
-                      <h4>MemberShip Plan</h4>
-                    </div>
-                    </Link>
                   </div>
                 </div>
               </Drawer>
@@ -123,4 +100,4 @@ const MobileMenu = () => {
   )
 }
 
-export default MobileMenu
+export default TeachingMobileMenu

@@ -58,24 +58,24 @@ const cardsDetails = [
 
   const latestCalender = [
     {
-        title:"Lorem Ipsum",
+        title:"Course Name",
         days:"Mon - Thu - 10:44 am",
         image:"/images/Avatar.png" + "/images/Avatar2.png",
     },
     {
-        title:"Lorem Ipsum",
+        title:"Course Name",
         days:"Mon - Thu - 10:44 am",
         image:"/images/Avatar.png" + "/images/Avatar2.png",
     },
     {
-        title:"Lorem Ipsum",
+        title:"Course Name",
         days:"Mon - Thu - 10:44 am",
         image:"/images/Avatar.png" + "/images/Avatar2.png",
     },
   ];
 
   const breadCrumbs = [
-    {name:'Dashboard', path:'/school-dashboard'},
+    {name:'School Dashboard', path:'/school-dashboard'},
   ]
 
 const TopCardsSection = () => {
@@ -95,7 +95,7 @@ const TopCardsSection = () => {
           {cardsDetails.map((card) => (
             <React.Fragment key={card.title}>
               <div className="w-[100%] md:w-[24%] relative border-borderGray px-3 py-4 rounded-xl bg-white border-[1px]">
-                <div className="absolute flex justify-center items-center top-0 left-3 p-3 rounded-xl -translate-y-[50%]"
+                <div className="absolute flex justify-center items-center z-10 top-0 left-3 p-3 rounded-xl -translate-y-[50%]"
                 style={{backgroundColor:card.bgColor}}
                 >
                   <Image src={card.img} width={20} height={20} />

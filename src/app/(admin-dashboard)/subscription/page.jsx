@@ -24,15 +24,22 @@ const SubscriptionTable = () => {
       plan: <button className="border-[1px] border-[#EDEDEE] bg-[#F9FAFC] rounded-full px-4 py-1">Free</button>,
       school: "Biffco Enterprises Ltd.",
       expire: "21 Sep, 2020",
-      icon: <div className="flex justify-evenly text-primaryText text-[17px]"><IoEyeOutline /><FaPen/><AiOutlineDelete /></div>,
-    },
+      icon: <div className="flex justify-evenly text-primaryText text-[17px]">
+      <IoEyeOutline  className="hover:text-primaryPurple hover:cursor-pointer "/>
+      <FaPen className="hover:text-primaryPurple hover:cursor-pointer "/>
+      <AiOutlineDelete  className="hover:text-primaryPurple hover:cursor-pointer "/>
+      </div>,    },
     {
       id: 2,
       name: <AvatarWithText src="/static/images/avatar/2.jpg" sizes="small" name="deanna.curtis"/>,
       plan: <button className="border-[1px] border-[#682D91] bg-[#682D91] text-white rounded-full px-4 py-1">Premium</button>,
       school: "Acme Co.",
       expire: "21 Sep, 2020",
-      icon: <div className="flex justify-evenly text-primaryText text-[17px]"><IoEyeOutline /><FaPen/><AiOutlineDelete /></div>,
+      icon: <div className="flex justify-evenly text-primaryText text-[17px]">
+        <IoEyeOutline  className="hover:text-primaryPurple hover:cursor-pointer "/>
+        <FaPen className="hover:text-primaryPurple hover:cursor-pointer "/>
+        <AiOutlineDelete  className="hover:text-primaryPurple hover:cursor-pointer "/>
+        </div>,
     },
     {
       id: 4,
@@ -40,32 +47,45 @@ const SubscriptionTable = () => {
       plan: <button className="border-[1px] border-[#682D91] bg-[#F9FAFC] rounded-full px-4 py-1">Pro</button>,
       school: "Riverloop",
       expire: "21 Sep, 2020",
-      icon: <div className="flex justify-evenly text-primaryText text-[17px]"><IoEyeOutline /><FaPen/><AiOutlineDelete /></div>,
-    },
+      icon: <div className="flex justify-evenly text-primaryText text-[17px]">
+      <IoEyeOutline  className="hover:text-primaryPurple hover:cursor-pointer "/>
+      <FaPen className="hover:text-primaryPurple hover:cursor-pointer "/>
+      <AiOutlineDelete  className="hover:text-primaryPurple hover:cursor-pointer "/>
+      </div>,    },
     {
       id: 5,
       name: <AvatarWithText src="/static/images/avatar/2.jpg" sizes="small" name="deanna.curtis"/>,
       plan: <button className="border-[1px] border-[#EDEDEE] bg-[#F9FAFC] rounded-full px-4 py-1">Free</button>,
       school: "Binford Ltd.",
       expire: "21 Sep, 2020",
-      icon: <div className="flex justify-evenly text-primaryText text-[17px]"><IoEyeOutline /><FaPen/><AiOutlineDelete /></div>,
-    },
+      icon: <div className="flex justify-evenly text-primaryText text-[17px]">
+      <IoEyeOutline  className="hover:text-primaryPurple hover:cursor-pointer "/>
+      <FaPen className="hover:text-primaryPurple hover:cursor-pointer "/>
+      <AiOutlineDelete  className="hover:text-primaryPurple hover:cursor-pointer "/>
+      </div>,    },
     {
       id: 6,
       name: <AvatarWithText src="/static/images/avatar/2.jpg" sizes="small" name="deanna.curtis"/>,
       plan: <button className="border-[1px] border-[#EDEDEE] bg-[#F9FAFC] rounded-full px-4 py-1">Free</button>,
       school: "Binford Ltd.",
       expire: "21 Sep, 2020",
-      icon: <div className="flex justify-evenly text-primaryText text-[17px]"><IoEyeOutline /><FaPen/><AiOutlineDelete /></div>,
-    },
+      icon: <div className="flex justify-evenly text-primaryText text-[17px]">
+      <IoEyeOutline  className="hover:text-primaryPurple hover:cursor-pointer "/>
+      <FaPen className="hover:text-primaryPurple hover:cursor-pointer "/>
+      <AiOutlineDelete  className="hover:text-primaryPurple hover:cursor-pointer "/>
+      </div>,    },
     {
       id: 6,
       name: <AvatarWithText src="/static/images/avatar/2.jpg" sizes="small" name="deanna.curtis"/>,
       plan: <button className="border-[1px] border-[#682D91] bg-[#F9FAFC] rounded-full px-4 py-1">Pro</button>,
       school: "Riverloop",
       expire: "21 Sep, 2020",
-      icon: <div className="flex justify-evenly text-primaryText text-[17px]"><IoEyeOutline /><FaPen/><AiOutlineDelete /></div>,
-    },
+      icon: <div className="flex justify-evenly text-primaryText text-[17px]">
+      <IoEyeOutline  className="hover:text-primaryPurple hover:cursor-pointer "/>
+      <FaPen className="hover:text-primaryPurple hover:cursor-pointer "/>
+      <AiOutlineDelete  className="hover:text-primaryPurple hover:cursor-pointer "/>
+      </div>,
+          },
   ];
   return (
     <>
@@ -83,10 +103,10 @@ const SubscriptionTable = () => {
             </div>{" "}
           </div>
             
-              <button className=" flex justify-between px-3 w-[30%] mt-2 md:mt-0 md:w-[10%] rounded-full text-[14px] items-center border-[1px] border-[#682D9133] bg-[#682D910F] text-primaryPurple">
+              <button className=" flex justify-between px-3 w-[30%] mt-2 md:mt-0 md:w-[18%] rounded-full text-[14px] items-center border-[1px] border-[#682D9133] bg-[#682D910F] text-primaryPurple">
             <Link href={'/subscription-setting'} className="flex items-center">
               <CiSettings className="text-xl"/>
-                Settings
+              Subscription Settings
             </Link>
                 </button>
         </div>

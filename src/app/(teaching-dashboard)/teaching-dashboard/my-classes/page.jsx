@@ -1,3 +1,4 @@
+"use client";
 import PrimaryBtn from "@/components/dashboard/PrimaryBtn";
 import React from "react";
 import { IoArrowBackSharp } from "react-icons/io5";
@@ -5,8 +6,20 @@ import { BiDotsHorizontalRounded } from "react-icons/bi";
 import { RiSearchLine } from "react-icons/ri";
 import Link from "next/link";
 import Breadcrumb from "@/components/Breadcrumb/Breadcrumb";
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
 
-const page = () => {
+const Page = () => {
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
 
     const featuresData = [
         {
@@ -72,7 +85,20 @@ const page = () => {
               bg={"#F9FAFC"}
             />
           </Link>
-            <BiDotsHorizontalRounded className="text-primaryText text-[2rem]" />
+            <BiDotsHorizontalRounded 
+            onClick={handleClick}
+            className="text-primaryText text-[2rem] hover:cursor-pointer hover:text-primaryPurple" />
+            <Menu
+        id="basic-menu"
+        anchorEl={anchorEl}
+        open={open}
+        onClose={handleClose}
+        MenuListProps={{
+          'aria-labelledby': 'basic-button',
+        }}
+      >
+        <MenuItem onClick={handleClose}>Lorem ipsum</MenuItem>
+      </Menu>
           </div>
         </div>
 
@@ -105,4 +131,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

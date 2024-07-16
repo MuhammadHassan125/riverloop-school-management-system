@@ -6,6 +6,7 @@ import Footer from "../Footer";
 import { MdOutlineMailOutline } from "react-icons/md";
 import { IoPhonePortraitOutline } from "react-icons/io5";
 import { LuEyeOff } from "react-icons/lu";
+import Link from "next/link";
 
 const page = () => {
   return (
@@ -71,7 +72,7 @@ const page = () => {
             type={"password"}
             placeholder="********"
              label="Password" 
-             icon={<LuEyeOff />}             
+            //  icon={<LuEyeOff />}             
              />
              </div>
 
@@ -80,14 +81,18 @@ const page = () => {
             type={"password"}
             placeholder="********"
              label="Confirm Password" 
-             icon={<LuEyeOff />}             
+            //  icon={<LuEyeOff />}             
              />
 </div> 
-            <AuthBtn label="Register" className="mt-3" />
+<button className="w-full font-medium rounded-full py-3 bg-primary-purple-gradient text-white mt-3 hover:opacity-75 hover:text-gray-200">
+        Register
+      </button>
 
             {/* forget password */}
             <div className="text-cen0ter my-5 mb-10 flex justify-center">
-             <p className="">Already have an account?  <span className="text-primaryPurple font-semibold"> Login now?</span></p>
+              <Link href='/login'>
+             <p className="">Already have an account?  <span className="text-primaryPurple font-semibold"> Login now</span></p>
+              </Link>
             </div>
 
           </div>
@@ -101,8 +106,8 @@ const page = () => {
       </div>
       
       {/* Right side Image  */}
-      <div className="w-[100%] md:w-[50%] h-full bg-right  bg-[url('/images/register-img.png')]"></div>
-    </main>
+      <div className="w-[100%] md:w-[50%] h-[25vh] md:h-full bg-right bg-[url('/images/register-img.png')] bg-no-repeat"></div>
+      </main>
   );
 };
 
