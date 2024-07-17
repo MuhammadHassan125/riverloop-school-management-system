@@ -14,7 +14,6 @@ registerLicense(
 );
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 import Breadcrumb from '@/components/Breadcrumb/Breadcrumb';
-
 const data = [
   {
     Id: 1,
@@ -31,6 +30,29 @@ const data = [
     IsAllDay: true,
     Status: "Completed",
     Priority: "High",
+  },
+  {
+    Id: 3,
+    Subject: "Team Meeting",
+    StartTime: new Date(2025, 1, 12, 14, 0),
+    EndTime: new Date(2025, 1, 12, 15, 30),
+    IsAllDay: false,
+  },
+  {
+    Id: 4,
+    Subject: "Project Deadline",
+    StartTime: new Date(2025, 1, 15, 9, 0),
+    EndTime: new Date(2025, 1, 15, 17, 0),
+    IsAllDay: true,
+    Status: "In Progress",
+    Priority: "Low",
+  },
+  {
+    Id: 5,
+    Subject: "Client Meeting",
+    StartTime: new Date(2025, 1, 18, 10, 0),
+    EndTime: new Date(2025, 1, 18, 12, 0),
+    IsAllDay: false,
   },
 ];
 
@@ -104,14 +126,16 @@ const Page = () => {
       height={500}
       currentView="Week"
       selectedDate={new Date(2025, 1, 11)}
-      eventSettings={{ dataSource: data }}
+      eventSettings={{ dataSource: data, create: null }}
+      readOnly={true}
+      allowAdding={false}
     >
       <ViewsDirective>
-        <ViewDirective option="Day" />
-        <ViewDirective option="Week" />
+        {/* <ViewDirective option="Day" />
+        <ViewDirective option="Week" /> */}
         <ViewDirective option="Month" />
       </ViewsDirective>
-      <Inject services={[Day, Week, Month]} />
+      <Inject services={[ Month]} />
     </ScheduleComponent>
     </div>
       </main>
