@@ -1,0 +1,20 @@
+
+
+  .rbc-event-content {
+    /* Custom styles for event content */
+    padding: 5px;
+    font-size: 14px;
+    font-weight: bold;
+  }
+  
+  /* Example targeting specific events by subject */
+  .rbc-event-content[data-tip*="Sales Presentation"] {
+    background-color: #ff6347 !important;
+  }
+  
+  .rbc-event-content[data-tip*="New Budget Report"] {
+    background-color: #4682b4 !important;
+  }
+  
+  /* Add similar rules for other event subjects as needed */
+  

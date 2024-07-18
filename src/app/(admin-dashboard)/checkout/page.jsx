@@ -9,8 +9,8 @@ import Link from 'next/link';
 
 
 const breadcrumb = [
-    {name:"Dashboard", path:"/school-dashboard"},
-    {name:"Checkout", path:"/school-dashboard/checkout"},
+    {name:"Dashboard", path:"/admin-dashboard"},
+    {name:"Checkout", path:"/checkout"},
 ]
 const page = () => {
   return (
@@ -19,7 +19,9 @@ const page = () => {
         <main className="w-[98%] h-min-screen p-3 pb-6 m-auto border-[1px] rounded-xl border-borderGray bg-white">
             <div className='w-full flex items-center justify-between'>
                 <h3>Checkout</h3>
+                <Link href="/admin-dashboard">
                 <PrimaryBtn text={"Back"} bg={"#F9FAFC"} color={"black"} icon={<FaArrowLeft />}/>
+                </Link>
             </div>
 
             <div className='w-full my-6 flex flex-col items-center justify-center'>
@@ -113,7 +115,7 @@ const page = () => {
 
 
             <div className='py-10'>
-                <Link href={"/school-dashboard"}>
+                <Link href={"/admin-dashboard"} className='hover:opacity-65'>
             <PrimaryBtn
                 type={"submit"}
                 text={"Checkout with Stripe"}

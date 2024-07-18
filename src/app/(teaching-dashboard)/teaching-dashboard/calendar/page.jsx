@@ -1,19 +1,18 @@
 "use client";
-import React from 'react';
+import React, { useCallback } from 'react';
 import '@syncfusion/ej2-react-schedule/styles/material.css';
-import { ScheduleComponent, ViewsDirective, ViewDirective, Day, Week, Month, Inject } from "@syncfusion/ej2-react-schedule";
-import { registerLicense } from "@syncfusion/ej2-base";
 import Link from 'next/link';
 import PrimaryBtn from '@/components/dashboard/PrimaryBtn';
 import { IoArrowBackSharp } from "react-icons/io5";
 import { RiSearchLine } from "react-icons/ri";
-import PrimaryInput from '@/components/PrimaryInput';
-
-registerLicense(
-  "Ngo9BigBOggjHTQxAR8/V1NCaF5cXmZCdkx0WmFZfVpgcl9HZFZTTWY/P1ZhSXxXdkJjWn5WcXBWRmJYUkQ="
-);
+import { Calendar, momentLocalizer } from 'react-big-calendar'
+import moment from 'moment';
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 import Breadcrumb from '@/components/Breadcrumb/Breadcrumb';
+import 'react-big-calendar/lib/css/react-big-calendar.css';
+import '../../../../components/TeachingPanel/index.css';
+// import 'react-big-calendar/lib/addons/dragAndDrop/styles';
+
 const data = [
   {
     Id: 1,
@@ -61,12 +60,41 @@ const breadcrumbItems = [
     { name: 'Calendar', path: '/teaching-dashboard/calendar' },
   ];
 
+  const localizer = momentLocalizer(moment)
+  const myEventsList = data.map((event) => {
+    return {
+      start: event.StartTime,
+      end: event.EndTime,
+      title: event.Subject,
+    };
+  });
+
+
+
 const Page = () => {
   const [isOpen, setIsOpen] = React.useState(false);
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
   };
+
+  
+  const eventPropGetter = useCallback(
+    (event, start, end, isSelected) => ({
+      ...(isSelected && {
+        style: {
+          backgroundColor: '#000',
+        },
+      }),
+      ...(moment(start).hour() < 12 && {
+        className: 'powderBlue',
+      }),
+      ...(event.title.includes('Team Meeting') && {
+        className: 'darkGreen',
+      }),
+    }),
+    []
+  )
   return (
     <React.Fragment>
         <Breadcrumb items={breadcrumbItems}/>
@@ -121,25 +149,19 @@ const Page = () => {
         </div>
     </div>
 
-    <div className='w-full flex items-center justify-center pb-10'>
-    <ScheduleComponent
-      height={500}
-      currentView="Week"
-      selectedDate={new Date(2025, 1, 11)}
-      eventSettings={{ dataSource: data, create: null }}
-      readOnly={true}
-      allowAdding={false}
-    >
-      <ViewsDirective>
-        {/* <ViewDirective option="Day" />
-        <ViewDirective option="Week" /> */}
-        <ViewDirective option="Month" />
-      </ViewsDirective>
-      <Inject services={[ Month]} />
-    </ScheduleComponent>
-    </div>
+    <div style={{height:"100%"}}>
+    <Calendar
+      localizer={localizer}
+      events={myEventsList}
+      startAccessor="start"
+      endAccessor="end"
+      toolbar={false}
+      style={{height:"100%"}}
+      defaultDate={new Date(2025, 1, 10)}
+        eventPropGetter={eventPropGetter}
+      />
+  </div>
       </main>
-      
     </React.Fragment>
   );
 };

@@ -14,7 +14,7 @@ export default function Sidebar({ children, isSidebarOpen }) {
           <div className="p-4 pb-2 flex justify-between items-center">
             <Image
               width={150}
-              height={150}s
+              height={150}
               src="/images/logo.png"
               alt="logo"
               className={`overflow-hidden transition-all duration-300 ${isSidebarOpen ? "w-32" : "w-0"
@@ -59,7 +59,7 @@ export function SidebarItem({ icon, text, alert, link }) {
       >
         <span className="">{icon}</span>
         <span
-          className={`overflow-hidden transition-all duration-300 ${isSidebarOpen ? "w-52 ml-3" : "w-0"
+          className={`overflow-hidden transition-all duration-300 ${isSidebarOpen ? "w-32 ml-3" : "w-0"
             }`}
         >
           {text}
